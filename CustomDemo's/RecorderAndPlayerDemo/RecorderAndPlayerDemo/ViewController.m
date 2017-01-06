@@ -12,10 +12,11 @@
 #import <AFNetworking.h>
 #import "PermissionsTools.h"
 
-@interface ViewController ()<AVAudioRecorderDelegate>
+@interface ViewController ()<AVAudioRecorderDelegate,AVAudioPlayerDelegate>
 {
     double startPointX;
     double startPointY;
+    BOOL isActivity;
 }
 @property (nonatomic ) AVAudioSession *session;
 @property (nonatomic ) AVAudioRecorder *recorder;
@@ -38,38 +39,40 @@
 - (void)audioRecorderDidFinishRecording:(AVAudioRecorder *)recorder successfully:(BOOL)flag {
 
     if (flag) {
+        NSLog(@"record end");
         [_session setActive:NO error:nil];
+        [self.timer invalidate];
     }
     
 }
 
-- (void)audioRecorderEncodeErrorDidOccur:(AVAudioRecorder *)recorder error:(NSError * __nullable)error {
+#pragma mark AVAudioPlayerDelegate
+- (void)audioPlayerDidFinishPlaying:(AVAudioPlayer *)player successfully:(BOOL)flag {
 
-}
+    if (flag) {
+        NSLog(@"play end");
+        [self.timer invalidate];
 
-- (NSDictionary *)recorderSetting {
-    
-    NSMutableDictionary *recorderSettings = [NSMutableDictionary dictionaryWithCapacity:10];
-    //设置录音格式  AVFormatIDKey==kAudioFormatLinearPCM  .caf
-    [recorderSettings setValue:@(kAudioFormatMPEG4AAC) forKey:AVFormatIDKey];
-    //设置录音采样率(Hz) 如：AVSampleRateKey==8000/44100/96000（影响音频的质量） 采样率必须要设为11025才能使转化成mp3格式后不会失真
-    [recorderSettings setValue:@44100 forKey:AVSampleRateKey];
-    //录音通道数  1 或 2
-    [recorderSettings setValue:@2 forKey:AVNumberOfChannelsKey];
-    //线性采样位数  8、16、24、32
-    [recorderSettings setValue:@16 forKey:AVLinearPCMBitDepthKey];
-    //录音的质量
-    [recorderSettings setValue:@(AVAudioQualityHigh) forKey:AVEncoderAudioQualityKey];
-    
-    return recorderSettings;
+    }
 }
 
 - (void)changeVoice {
 
-    [_recorder updateMeters];
-    //0 表示最大分贝 -160 最小
-    double lowPassResults = pow(10, (0.5 * [_recorder peakPowerForChannel:0]));
-    NSLog(@"start %f   %f",lowPassResults,[_recorder peakPowerForChannel:0]);
+    double lowPassResults = 0.0;
+    if ([self.recorder isRecording]) {
+        [self.recorder updateMeters];
+        //peakPowerForChannel 160 – 0 直接
+        //0 表示最大分贝 -160 最小
+        lowPassResults = pow(10, (0.5 * [self.recorder peakPowerForChannel:0]));
+        NSLog(@"recorder change %f   %f",lowPassResults,[self.recorder peakPowerForChannel:0]);
+    }
+    
+    if ([_player isPlaying]) {
+        [_player updateMeters];
+        lowPassResults = pow(10, (0.5 * [_player peakPowerForChannel:0]));
+        NSLog(@"play change %f   %f",lowPassResults,[_player peakPowerForChannel:0]);
+        
+    }
 
     CABasicAnimation *animation=[CABasicAnimation animationWithKeyPath:@"transform.scale"];
     animation.fromValue=[NSNumber numberWithFloat:1];
@@ -98,12 +101,16 @@
             NSLog(@"start");
             startPointX = point.x;
             startPointY = point.y;
-            if ([PermissionsTools isAudioAllow]) {
-                if (![_recorder isRecording]) {
+
+            [_session setActive:YES error:nil];//启动音频会话管理,此时会阻断后台音乐的播放
+
+            if (isActivity && [PermissionsTools isAudioAllow]) {
+                
+                if (![self.recorder isRecording]) {
                     
-                    [_recorder prepareToRecord];
-                    [_recorder peakPowerForChannel:0.0];
-                    [_recorder record];
+                    [self.recorder prepareToRecord];
+                    [self.recorder peakPowerForChannel:0.0];
+                    [self.recorder record];
                     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changeVoice) userInfo:nil repeats:YES];
                     [self.timer fire];
                     
@@ -115,16 +122,16 @@
         case UIGestureRecognizerStateChanged:
         {
             if (point.y <= startPointY - 60) {
-                if ([_recorder isRecording]) {
-                    [_recorder pause];
+                if ([self.recorder isRecording]) {
+                    [self.recorder pause];
                     _theTitle.text = @"release";
 
                 }
             }
             if (startPointY - 60 < point.y) {
                 
-                if (![_recorder isRecording]) {
-                    [_recorder record];
+                if (![self.recorder isRecording]) {
+                    [self.recorder record];
                     _theTitle.text = @"up cancel";
                 }
             }
@@ -136,12 +143,12 @@
         {
             _theTitle.text = @"start";
 
-            if ([_recorder isRecording]) {
-                [_recorder stop];
+            if ([self.recorder isRecording]) {
+                [self.recorder stop];
                 NSLog(@"end");
             }else {
-                [_recorder deleteRecording];
-                [_recorder stop];
+                [self.recorder deleteRecording];
+                [self.recorder stop];
                 NSLog(@"cancel");
             }
             
@@ -158,15 +165,11 @@
 
 - (IBAction)clickListen:(UIButton *)sender {
     
-    _player = [[AVAudioPlayer alloc]initWithContentsOfURL:self.pathUrl error:nil];
-    //设置声音的大小
-    self.player.volume = 0.7;//范围为（0到1）；
-    //设置循环次数，如果为负数，就是无限循环 -1
-    self.player.numberOfLoops = 0 ;
-    //设置播放进度
-    self.player.currentTime = 0;
     [self.player prepareToPlay];
     [self.player play];
+    
+    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changeVoice) userInfo:nil repeats:YES];
+    [self.timer fire];
     
 }
 
@@ -226,35 +229,67 @@
     [super viewDidLoad];
     
     _session = [AVAudioSession sharedInstance];
-    
     NSError *sessionError;
-    [_session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
+    isActivity = [_session setCategory:AVAudioSessionCategoryPlayAndRecord error:&sessionError];
     
-    if(!_session)
-        NSLog(@"Error creating session: %@", [sessionError description]);
-    else
-        [_session setActive:YES error:nil];
-    
-//    NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-//    NSString *docsDir = [dirPaths objectAtIndex:0];
-//    NSString *soundFilePath = [docsDir
-//                               stringByAppendingPathComponent:@"recordTest.caf"];
-    NSString *fileName = [NSString stringWithFormat:@"%dsound.caf",(int)[NSDate date].timeIntervalSince1970];
+    NSString *fileName = [NSString stringWithFormat:@"%d_sound",(int)[NSDate date].timeIntervalSince1970];
     NSString *filePath = [NSTemporaryDirectory() stringByAppendingString:fileName];
     NSURL *url = [NSURL fileURLWithPath:filePath];
     self.pathUrl = url;
     
     NSLog(@" - %@",url);
-    NSDictionary *settings = [self recorderSetting];
-    _recorder = [[AVAudioRecorder alloc] initWithURL:url settings:settings error:nil];
-    //开启音量检测
-    _recorder.meteringEnabled = YES;
-    _recorder.delegate = self;
     
     UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longPress:)];
     [self.theView addGestureRecognizer:longPress];
 
     // Do any additional setup after loading the view, typically from a nib.
+}
+
+- (NSDictionary *)recorderSetting {
+    
+    NSMutableDictionary *recorderSettings = [NSMutableDictionary dictionaryWithCapacity:10];
+    //设置录音格式  AVFormatIDKey==kAudioFormatLinearPCM  kAudioFormatMPEG4AAC
+    [recorderSettings setValue:@(kAudioFormatLinearPCM) forKey:AVFormatIDKey];
+    //设置录音采样率(Hz) 如：AVSampleRateKey==8000/44100/96000（影响音频的质量） 采样率必须要设为11025才能使转化成mp3格式后不会失真 44100  接近audio  一般录音 8000
+    [recorderSettings setValue:@11025 forKey:AVSampleRateKey];
+    //录音通道数  1 或 2
+    [recorderSettings setValue:@1 forKey:AVNumberOfChannelsKey];
+    //线性采样位数 bit率  8、16、24、32
+    [recorderSettings setValue:@16 forKey:AVLinearPCMBitDepthKey];
+    //录音的质量
+    [recorderSettings setValue:@(AVAudioQualityHigh) forKey:AVEncoderAudioQualityKey];
+    
+    return recorderSettings;
+}
+
+- (AVAudioRecorder *)recorder {
+    
+    if (!_recorder) {
+        NSDictionary *settings = [self recorderSetting];
+        _recorder = [[AVAudioRecorder alloc] initWithURL:self.pathUrl settings:settings error:nil];
+        //开启音量检测
+        _recorder.meteringEnabled = YES;
+        _recorder.delegate = self;
+    }
+    return _recorder;
+    
+}
+
+- (AVAudioPlayer *)player {
+    
+    if (!_player) {
+        _player = [[AVAudioPlayer alloc]initWithContentsOfURL:self.pathUrl error:nil];
+        //设置声音的大小
+        _player.volume = 0.7;//范围为（0到1）；
+        //设置循环次数，如果为负数，就是无限循环 -1
+        _player.numberOfLoops = 0 ;
+        //设置播放进度
+        _player.currentTime = 0;
+        
+        _player.delegate = self;
+        _player.meteringEnabled = YES;
+    }
+    return _player;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -264,3 +299,4 @@
 
 
 @end
+
