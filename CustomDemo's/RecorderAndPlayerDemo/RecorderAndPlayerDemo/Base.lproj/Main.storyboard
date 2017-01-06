@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UJN-az-nO6">
+                                <rect key="frame" x="20" y="617" width="335" height="40"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wht-Oh-yaF">
+                                        <rect key="frame" x="146" y="7.5" width="43" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="wht-Oh-yaF" firstAttribute="centerY" secondItem="UJN-az-nO6" secondAttribute="centerY" id="aaQ-0z-KJd"/>
+                                    <constraint firstAttribute="height" constant="40" id="agu-h9-0gm"/>
+                                    <constraint firstItem="wht-Oh-yaF" firstAttribute="centerX" secondItem="UJN-az-nO6" secondAttribute="centerX" id="xLG-wg-32f"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="b9P-8X-OhQ">
+                                <rect key="frame" x="157" y="303.5" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.84705882349999995" green="0.17254901959999999" blue="0.17254901959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="02n-S3-K1R"/>
+                                    <constraint firstAttribute="width" secondItem="b9P-8X-OhQ" secondAttribute="height" id="yJF-sJ-s2P"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFt-LK-DCj">
+                                <rect key="frame" x="166" y="80" width="42" height="30"/>
+                                <state key="normal" title="Listen"/>
+                                <connections>
+                                    <action selector="clickListen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jfN-I1-e7d"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZY-mU-U95">
+                                <rect key="frame" x="297" y="30" width="58" height="34"/>
+                                <state key="normal" title="Upload">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="clickUpload:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XnZ-qa-yeS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UJN-az-nO6" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="6bI-30-dzu"/>
+                            <constraint firstItem="b9P-8X-OhQ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Tb7-qx-XNv"/>
+                            <constraint firstAttribute="trailing" secondItem="tZY-mU-U95" secondAttribute="trailing" constant="20" id="Z0n-Ei-mw9"/>
+                            <constraint firstItem="DFt-LK-DCj" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bXF-6G-daY"/>
+                            <constraint firstItem="tZY-mU-U95" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="bgF-3B-coW"/>
+                            <constraint firstItem="b9P-8X-OhQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="hxX-Ih-UJh"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="UJN-az-nO6" secondAttribute="bottom" constant="10" id="ibc-r3-rqa"/>
+                            <constraint firstItem="DFt-LK-DCj" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="60" id="lF8-jM-GRb"/>
+                            <constraint firstAttribute="trailing" secondItem="UJN-az-nO6" secondAttribute="trailing" constant="20" id="mpG-o8-hBa"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="theTitle" destination="wht-Oh-yaF" id="8t9-T3-xsC"/>
+                        <outlet property="theView" destination="UJN-az-nO6" id="uhx-FA-Oew"/>
+                        <outlet property="voiceImage" destination="b9P-8X-OhQ" id="W1g-oa-Wvg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="32.799999999999997" y="42.728635682158924"/>
+        </scene>
+    </scenes>
+</document>

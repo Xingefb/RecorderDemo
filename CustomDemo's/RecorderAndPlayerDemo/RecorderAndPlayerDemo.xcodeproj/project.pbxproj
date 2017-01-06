@@ -1,0 +1,737 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		40D8426A1E1E11CA00681BC9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D842691E1E11CA00681BC9 /* main.m */; };
+		40D8426D1E1E11CA00681BC9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D8426C1E1E11CA00681BC9 /* AppDelegate.m */; };
+		40D842701E1E11CA00681BC9 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D8426F1E1E11CA00681BC9 /* ViewController.m */; };
+		40D842731E1E11CA00681BC9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D842711E1E11CA00681BC9 /* Main.storyboard */; };
+		40D842751E1E11CA00681BC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 40D842741E1E11CA00681BC9 /* Assets.xcassets */; };
+		40D842781E1E11CA00681BC9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40D842761E1E11CA00681BC9 /* LaunchScreen.storyboard */; };
+		40D842831E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D842821E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.m */; };
+		40D8428E1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D8428D1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.m */; };
+		40D8429D1E1F430000681BC9 /* PermissionsTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 40D8429C1E1F430000681BC9 /* PermissionsTools.m */; };
+		84DD70995FF844F11EF32F88 /* libPods-RecorderAndPlayerDemo.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E1BFAFD697982BF50838C8F /* libPods-RecorderAndPlayerDemo.a */; };
+		8807650960F4E49613E8764B /* libPods-RecorderAndPlayerDemoTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 46D80D7563D1D040C52711DC /* libPods-RecorderAndPlayerDemoTests.a */; };
+		D2170785F0DDFEE2A5860150 /* libPods-RecorderAndPlayerDemoUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 53255522B59B4F22B92DDA86 /* libPods-RecorderAndPlayerDemoUITests.a */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		40D8427F1E1E11CA00681BC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40D8425D1E1E11CA00681BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40D842641E1E11CA00681BC9;
+			remoteInfo = RecorderAndPlayerDemo;
+		};
+		40D8428A1E1E11CA00681BC9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 40D8425D1E1E11CA00681BC9 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 40D842641E1E11CA00681BC9;
+			remoteInfo = RecorderAndPlayerDemo;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1E1BFAFD697982BF50838C8F /* libPods-RecorderAndPlayerDemo.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RecorderAndPlayerDemo.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3E7E191F5806699E138CAE /* Pods-RecorderAndPlayerDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecorderAndPlayerDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecorderAndPlayerDemoUITests/Pods-RecorderAndPlayerDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		40D842651E1E11CA00681BC9 /* RecorderAndPlayerDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecorderAndPlayerDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D842691E1E11CA00681BC9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		40D8426B1E1E11CA00681BC9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		40D8426C1E1E11CA00681BC9 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		40D8426E1E1E11CA00681BC9 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		40D8426F1E1E11CA00681BC9 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		40D842721E1E11CA00681BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		40D842741E1E11CA00681BC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		40D842771E1E11CA00681BC9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		40D842791E1E11CA00681BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40D8427E1E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorderAndPlayerDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D842821E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAndPlayerDemoTests.m; sourceTree = "<group>"; };
+		40D842841E1E11CA00681BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40D842891E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecorderAndPlayerDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40D8428D1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RecorderAndPlayerDemoUITests.m; sourceTree = "<group>"; };
+		40D8428F1E1E11CA00681BC9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		40D8429B1E1F430000681BC9 /* PermissionsTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PermissionsTools.h; sourceTree = "<group>"; };
+		40D8429C1E1F430000681BC9 /* PermissionsTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PermissionsTools.m; sourceTree = "<group>"; };
+		46D80D7563D1D040C52711DC /* libPods-RecorderAndPlayerDemoTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RecorderAndPlayerDemoTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		483BD3706DCB6702182A3BDB /* Pods-RecorderAndPlayerDemoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecorderAndPlayerDemoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecorderAndPlayerDemoTests/Pods-RecorderAndPlayerDemoTests.release.xcconfig"; sourceTree = "<group>"; };
+		53255522B59B4F22B92DDA86 /* libPods-RecorderAndPlayerDemoUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RecorderAndPlayerDemoUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		992FE65CBE51A000600D8E9B /* Pods-RecorderAndPlayerDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecorderAndPlayerDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecorderAndPlayerDemoTests/Pods-RecorderAndPlayerDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AC2C0B2F4188E0E724EBA8FD /* Pods-RecorderAndPlayerDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecorderAndPlayerDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecorderAndPlayerDemo/Pods-RecorderAndPlayerDemo.release.xcconfig"; sourceTree = "<group>"; };
+		C6B3DC3A29338BDE11BC4388 /* Pods-RecorderAndPlayerDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecorderAndPlayerDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RecorderAndPlayerDemo/Pods-RecorderAndPlayerDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		CCD9CF088F56F6CF5FE40339 /* Pods-RecorderAndPlayerDemoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RecorderAndPlayerDemoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-RecorderAndPlayerDemoUITests/Pods-RecorderAndPlayerDemoUITests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		40D842621E1E11CA00681BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84DD70995FF844F11EF32F88 /* libPods-RecorderAndPlayerDemo.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D8427B1E1E11CA00681BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8807650960F4E49613E8764B /* libPods-RecorderAndPlayerDemoTests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D842861E1E11CA00681BC9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2170785F0DDFEE2A5860150 /* libPods-RecorderAndPlayerDemoUITests.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		40D8425C1E1E11CA00681BC9 = {
+			isa = PBXGroup;
+			children = (
+				40D842671E1E11CA00681BC9 /* RecorderAndPlayerDemo */,
+				40D842811E1E11CA00681BC9 /* RecorderAndPlayerDemoTests */,
+				40D8428C1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests */,
+				40D842661E1E11CA00681BC9 /* Products */,
+				912E7691467274B29F7F3E46 /* Pods */,
+				E28E18A0CD7E3005B1299C1A /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		40D842661E1E11CA00681BC9 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				40D842651E1E11CA00681BC9 /* RecorderAndPlayerDemo.app */,
+				40D8427E1E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.xctest */,
+				40D842891E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		40D842671E1E11CA00681BC9 /* RecorderAndPlayerDemo */ = {
+			isa = PBXGroup;
+			children = (
+				40D8426B1E1E11CA00681BC9 /* AppDelegate.h */,
+				40D8426C1E1E11CA00681BC9 /* AppDelegate.m */,
+				40D8426E1E1E11CA00681BC9 /* ViewController.h */,
+				40D8426F1E1E11CA00681BC9 /* ViewController.m */,
+				40D842711E1E11CA00681BC9 /* Main.storyboard */,
+				40D842741E1E11CA00681BC9 /* Assets.xcassets */,
+				40D842761E1E11CA00681BC9 /* LaunchScreen.storyboard */,
+				40D842791E1E11CA00681BC9 /* Info.plist */,
+				40D842681E1E11CA00681BC9 /* Supporting Files */,
+				40D8429B1E1F430000681BC9 /* PermissionsTools.h */,
+				40D8429C1E1F430000681BC9 /* PermissionsTools.m */,
+			);
+			path = RecorderAndPlayerDemo;
+			sourceTree = "<group>";
+		};
+		40D842681E1E11CA00681BC9 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				40D842691E1E11CA00681BC9 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		40D842811E1E11CA00681BC9 /* RecorderAndPlayerDemoTests */ = {
+			isa = PBXGroup;
+			children = (
+				40D842821E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.m */,
+				40D842841E1E11CA00681BC9 /* Info.plist */,
+			);
+			path = RecorderAndPlayerDemoTests;
+			sourceTree = "<group>";
+		};
+		40D8428C1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests */ = {
+			isa = PBXGroup;
+			children = (
+				40D8428D1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.m */,
+				40D8428F1E1E11CA00681BC9 /* Info.plist */,
+			);
+			path = RecorderAndPlayerDemoUITests;
+			sourceTree = "<group>";
+		};
+		912E7691467274B29F7F3E46 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C6B3DC3A29338BDE11BC4388 /* Pods-RecorderAndPlayerDemo.debug.xcconfig */,
+				AC2C0B2F4188E0E724EBA8FD /* Pods-RecorderAndPlayerDemo.release.xcconfig */,
+				992FE65CBE51A000600D8E9B /* Pods-RecorderAndPlayerDemoTests.debug.xcconfig */,
+				483BD3706DCB6702182A3BDB /* Pods-RecorderAndPlayerDemoTests.release.xcconfig */,
+				2B3E7E191F5806699E138CAE /* Pods-RecorderAndPlayerDemoUITests.debug.xcconfig */,
+				CCD9CF088F56F6CF5FE40339 /* Pods-RecorderAndPlayerDemoUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		E28E18A0CD7E3005B1299C1A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1E1BFAFD697982BF50838C8F /* libPods-RecorderAndPlayerDemo.a */,
+				46D80D7563D1D040C52711DC /* libPods-RecorderAndPlayerDemoTests.a */,
+				53255522B59B4F22B92DDA86 /* libPods-RecorderAndPlayerDemoUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		40D842641E1E11CA00681BC9 /* RecorderAndPlayerDemo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40D842921E1E11CA00681BC9 /* Build configuration list for PBXNativeTarget "RecorderAndPlayerDemo" */;
+			buildPhases = (
+				07C7A411367518FFF6E1BF95 /* [CP] Check Pods Manifest.lock */,
+				40D842611E1E11CA00681BC9 /* Sources */,
+				40D842621E1E11CA00681BC9 /* Frameworks */,
+				40D842631E1E11CA00681BC9 /* Resources */,
+				573835033004C52C9D1D343C /* [CP] Embed Pods Frameworks */,
+				F990CB2B6A77B48F0C9ED254 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RecorderAndPlayerDemo;
+			productName = RecorderAndPlayerDemo;
+			productReference = 40D842651E1E11CA00681BC9 /* RecorderAndPlayerDemo.app */;
+			productType = "com.apple.product-type.application";
+		};
+		40D8427D1E1E11CA00681BC9 /* RecorderAndPlayerDemoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40D842951E1E11CA00681BC9 /* Build configuration list for PBXNativeTarget "RecorderAndPlayerDemoTests" */;
+			buildPhases = (
+				C8B6CD26AFA07FD64B201591 /* [CP] Check Pods Manifest.lock */,
+				40D8427A1E1E11CA00681BC9 /* Sources */,
+				40D8427B1E1E11CA00681BC9 /* Frameworks */,
+				40D8427C1E1E11CA00681BC9 /* Resources */,
+				07A95847C53E00CF321EACF7 /* [CP] Embed Pods Frameworks */,
+				F9A059D65DD6A4260C9B17F9 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40D842801E1E11CA00681BC9 /* PBXTargetDependency */,
+			);
+			name = RecorderAndPlayerDemoTests;
+			productName = RecorderAndPlayerDemoTests;
+			productReference = 40D8427E1E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		40D842881E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 40D842981E1E11CA00681BC9 /* Build configuration list for PBXNativeTarget "RecorderAndPlayerDemoUITests" */;
+			buildPhases = (
+				51C2F528B956974829A13D27 /* [CP] Check Pods Manifest.lock */,
+				40D842851E1E11CA00681BC9 /* Sources */,
+				40D842861E1E11CA00681BC9 /* Frameworks */,
+				40D842871E1E11CA00681BC9 /* Resources */,
+				EB55CADDF3F1ACAF5C034539 /* [CP] Embed Pods Frameworks */,
+				2BBA6C4A47D13962AA517D59 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				40D8428B1E1E11CA00681BC9 /* PBXTargetDependency */,
+			);
+			name = RecorderAndPlayerDemoUITests;
+			productName = RecorderAndPlayerDemoUITests;
+			productReference = 40D842891E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		40D8425D1E1E11CA00681BC9 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0810;
+				ORGANIZATIONNAME = Dzy;
+				TargetAttributes = {
+					40D842641E1E11CA00681BC9 = {
+						CreatedOnToolsVersion = 8.1;
+						DevelopmentTeam = 3CP5W9DM94;
+						ProvisioningStyle = Automatic;
+					};
+					40D8427D1E1E11CA00681BC9 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 40D842641E1E11CA00681BC9;
+					};
+					40D842881E1E11CA00681BC9 = {
+						CreatedOnToolsVersion = 8.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 40D842641E1E11CA00681BC9;
+					};
+				};
+			};
+			buildConfigurationList = 40D842601E1E11CA00681BC9 /* Build configuration list for PBXProject "RecorderAndPlayerDemo" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 40D8425C1E1E11CA00681BC9;
+			productRefGroup = 40D842661E1E11CA00681BC9 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				40D842641E1E11CA00681BC9 /* RecorderAndPlayerDemo */,
+				40D8427D1E1E11CA00681BC9 /* RecorderAndPlayerDemoTests */,
+				40D842881E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		40D842631E1E11CA00681BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D842781E1E11CA00681BC9 /* LaunchScreen.storyboard in Resources */,
+				40D842751E1E11CA00681BC9 /* Assets.xcassets in Resources */,
+				40D842731E1E11CA00681BC9 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D8427C1E1E11CA00681BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D842871E1E11CA00681BC9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		07A95847C53E00CF321EACF7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecorderAndPlayerDemoTests/Pods-RecorderAndPlayerDemoTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		07C7A411367518FFF6E1BF95 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		2BBA6C4A47D13962AA517D59 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecorderAndPlayerDemoUITests/Pods-RecorderAndPlayerDemoUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		51C2F528B956974829A13D27 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		573835033004C52C9D1D343C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecorderAndPlayerDemo/Pods-RecorderAndPlayerDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C8B6CD26AFA07FD64B201591 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB55CADDF3F1ACAF5C034539 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecorderAndPlayerDemoUITests/Pods-RecorderAndPlayerDemoUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F990CB2B6A77B48F0C9ED254 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecorderAndPlayerDemo/Pods-RecorderAndPlayerDemo-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F9A059D65DD6A4260C9B17F9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RecorderAndPlayerDemoTests/Pods-RecorderAndPlayerDemoTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		40D842611E1E11CA00681BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D842701E1E11CA00681BC9 /* ViewController.m in Sources */,
+				40D8426D1E1E11CA00681BC9 /* AppDelegate.m in Sources */,
+				40D8429D1E1F430000681BC9 /* PermissionsTools.m in Sources */,
+				40D8426A1E1E11CA00681BC9 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D8427A1E1E11CA00681BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D842831E1E11CA00681BC9 /* RecorderAndPlayerDemoTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		40D842851E1E11CA00681BC9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40D8428E1E1E11CA00681BC9 /* RecorderAndPlayerDemoUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		40D842801E1E11CA00681BC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40D842641E1E11CA00681BC9 /* RecorderAndPlayerDemo */;
+			targetProxy = 40D8427F1E1E11CA00681BC9 /* PBXContainerItemProxy */;
+		};
+		40D8428B1E1E11CA00681BC9 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 40D842641E1E11CA00681BC9 /* RecorderAndPlayerDemo */;
+			targetProxy = 40D8428A1E1E11CA00681BC9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		40D842711E1E11CA00681BC9 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40D842721E1E11CA00681BC9 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		40D842761E1E11CA00681BC9 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				40D842771E1E11CA00681BC9 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		40D842901E1E11CA00681BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		40D842911E1E11CA00681BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		40D842931E1E11CA00681BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6B3DC3A29338BDE11BC4388 /* Pods-RecorderAndPlayerDemo.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3CP5W9DM94;
+				INFOPLIST_FILE = RecorderAndPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzy.RecorderAndPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		40D842941E1E11CA00681BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC2C0B2F4188E0E724EBA8FD /* Pods-RecorderAndPlayerDemo.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 3CP5W9DM94;
+				INFOPLIST_FILE = RecorderAndPlayerDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzy.RecorderAndPlayerDemo;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		40D842961E1E11CA00681BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 992FE65CBE51A000600D8E9B /* Pods-RecorderAndPlayerDemoTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RecorderAndPlayerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzy.RecorderAndPlayerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecorderAndPlayerDemo.app/RecorderAndPlayerDemo";
+			};
+			name = Debug;
+		};
+		40D842971E1E11CA00681BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 483BD3706DCB6702182A3BDB /* Pods-RecorderAndPlayerDemoTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = RecorderAndPlayerDemoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzy.RecorderAndPlayerDemoTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RecorderAndPlayerDemo.app/RecorderAndPlayerDemo";
+			};
+			name = Release;
+		};
+		40D842991E1E11CA00681BC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2B3E7E191F5806699E138CAE /* Pods-RecorderAndPlayerDemoUITests.debug.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = RecorderAndPlayerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzy.RecorderAndPlayerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RecorderAndPlayerDemo;
+			};
+			name = Debug;
+		};
+		40D8429A1E1E11CA00681BC9 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CCD9CF088F56F6CF5FE40339 /* Pods-RecorderAndPlayerDemoUITests.release.xcconfig */;
+			buildSettings = {
+				INFOPLIST_FILE = RecorderAndPlayerDemoUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.dzy.RecorderAndPlayerDemoUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = RecorderAndPlayerDemo;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		40D842601E1E11CA00681BC9 /* Build configuration list for PBXProject "RecorderAndPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D842901E1E11CA00681BC9 /* Debug */,
+				40D842911E1E11CA00681BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40D842921E1E11CA00681BC9 /* Build configuration list for PBXNativeTarget "RecorderAndPlayerDemo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D842931E1E11CA00681BC9 /* Debug */,
+				40D842941E1E11CA00681BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40D842951E1E11CA00681BC9 /* Build configuration list for PBXNativeTarget "RecorderAndPlayerDemoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D842961E1E11CA00681BC9 /* Debug */,
+				40D842971E1E11CA00681BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		40D842981E1E11CA00681BC9 /* Build configuration list for PBXNativeTarget "RecorderAndPlayerDemoUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				40D842991E1E11CA00681BC9 /* Debug */,
+				40D8429A1E1E11CA00681BC9 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 40D8425D1E1E11CA00681BC9 /* Project object */;
+}
