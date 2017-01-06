@@ -97,8 +97,7 @@
     switch (longPress.state) {
         case UIGestureRecognizerStateBegan:
         {
-            _theTitle.text = @"up cancel";
-            NSLog(@"start");
+            NSLog(@"recorder will start");
             startPointX = point.x;
             startPointY = point.y;
 
@@ -106,15 +105,22 @@
 
             if (isActivity && [PermissionsTools isAudioAllow]) {
                 
+                if ([self.player isPlaying]) {
+                    [self.player stop];
+                };
+                
                 if (![self.recorder isRecording]) {
-                    
+                
                     [self.recorder prepareToRecord];
                     [self.recorder peakPowerForChannel:0.0];
                     [self.recorder record];
                     self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changeVoice) userInfo:nil repeats:YES];
                     [self.timer fire];
-                    
+
+                    _theTitle.text = @"up cancel";
+
                 }
+                
             }
 
         }
@@ -141,18 +147,18 @@
         case UIGestureRecognizerStateCancelled:
         case UIGestureRecognizerStateEnded:
         {
-            _theTitle.text = @"start";
 
             if ([self.recorder isRecording]) {
                 [self.recorder stop];
-                NSLog(@"end");
+                NSLog(@"recorder end");
             }else {
-                [self.recorder deleteRecording];
                 [self.recorder stop];
-                NSLog(@"cancel");
+                [self.recorder deleteRecording];
+                NSLog(@"recorder cancel");
             }
             
             [self.timer invalidate];//取消定时器
+            _theTitle.text = @"start";
 
         }
             break;
@@ -165,11 +171,21 @@
 
 - (IBAction)clickListen:(UIButton *)sender {
     
-    [self.player prepareToPlay];
-    [self.player play];
+    if ([self.recorder isRecording]) {
+        
+        [self.recorder stop];
+        [self.recorder deleteRecording];
     
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changeVoice) userInfo:nil repeats:YES];
-    [self.timer fire];
+    };
+    
+    if (![self.player isPlaying]) {
+        
+        [self.player prepareToPlay];
+        [self.player play];
+        self.timer = [NSTimer scheduledTimerWithTimeInterval:0.1 target:self selector:@selector(changeVoice) userInfo:nil repeats:YES];
+        [self.timer fire];
+        
+    }
     
 }
 
@@ -299,4 +315,5 @@
 
 
 @end
+
 
